@@ -1,0 +1,73 @@
+/*
+ * Copyright (c) 2024 Realtek Semiconductor, Inc.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <arm/armv8-m.dtsi>
+#include <mem.h>
+#include <freq.h>
+#include <zephyr/dt-bindings/interrupt-controller/rts5817_intc.h>
+#include <zephyr/dt-bindings/pinctrl/rts5817_pinctrl.h>
+#include <zephyr/dt-bindings/reset/rts5817_reset.h>
+#include <zephyr/dt-bindings/clock/rts5817_clock.h>
+
+/ {
+	chosen {
+		zephyr,sram = &sram0;
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		cpu@0 {
+			device_type = "cpu";
+			compatible = "arm,cortex-m33";
+			reg = <0>;
+			clock-frequency = <DT_FREQ_M(240)>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+			cpu-power-states = <&standby &suspend &sleep>;
+		};
+
+		power-states {
+			standby: standby {
+				compatible = "zephyr,power-state";
+				power-state-name = "suspend-to-idle";
+				min-residency-us = <1000>;
+				exit-latency-us = <10>;
+			};
+
+			suspend: suspend {
+				compatible = "zephyr,power-state";
+				power-state-name = "suspend-to-ram";
+				substate-id = <0>;
+				min-residency-us = <2000>;
+				exit-latency-us = <20>;
+			};
+
+			sleep: sleep {
+				compatible = "zephyr,power-state";
+				power-state-name = "suspend-to-ram";
+				substate-id = <1>;
+				min-residency-us = <3000>;
+				exit-latency-us = <30>;
+			};
+		};
+	};
+
+	sram0: memory@20000000 {
+		compatible = "mmio-sram";
+		reg = <0x20000000 DT_SIZE_K(256)>;
+	};
+
+	soc {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "simple-bus";
+	};
+};
+
+&nvic {
+	arm,num-irq-priority-bits = <3>;
+};
