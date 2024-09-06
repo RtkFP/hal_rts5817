@@ -1,0 +1,6 @@
+family:
+- name: fingerprint
+  series:
+  - name: rts5817
+    socs:
+    - name: rts5817
