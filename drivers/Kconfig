@@ -3,4 +3,6 @@
 
 menu "Drivers"
 
+rsource "clock_control/Kconfig"
+
 endmenu
