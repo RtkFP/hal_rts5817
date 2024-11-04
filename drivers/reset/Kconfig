@@ -1,9 +1,8 @@
 # Copyright (c) 2024 Realtek Semiconductor, Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-menu "Drivers"
+if RESET
 
-rsource "clock_control/Kconfig"
-rsource "reset/Kconfig"
+rsource "./Kconfig.rts5817"
 
-endmenu
+endif
