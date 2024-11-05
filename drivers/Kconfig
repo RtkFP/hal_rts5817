@@ -6,5 +6,6 @@ menu "Drivers"
 rsource "clock_control/Kconfig"
 rsource "pinctrl/Kconfig"
 rsource "reset/Kconfig"
+rsource "watchdog/Kconfig"
 
 endmenu

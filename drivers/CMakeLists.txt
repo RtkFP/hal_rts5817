@@ -4,3 +4,4 @@
 add_subdirectory_ifdef(CONFIG_CLOCK_CONTROL clock_control)
 add_subdirectory_ifdef(CONFIG_PINCTRL pinctrl)
 add_subdirectory_ifdef(CONFIG_RESET reset)
+add_subdirectory_ifdef(CONFIG_WATCHDOG watchdog)
