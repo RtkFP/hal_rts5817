@@ -133,6 +133,15 @@
 			resets = <&reset SYS_FORCE_RST_UART1>;
 			status = "disabled";
 		};
+
+		quadspi: quadspi@40000000 {
+			compatible = "realtek,rts5817-qspi";
+			reg = <0x40000000 0xB0>,
+			      <0x401E002C 0x1>,
+			      <0x401E2108 0x4>;
+			clocks = <&clks RTS_FP_CLK_SPI_CACHE>;
+			status = "disabled";
+		};
 	};
 };
 

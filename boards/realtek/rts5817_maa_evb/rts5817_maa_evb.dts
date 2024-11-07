@@ -45,3 +45,7 @@
 &gpio {
 	status = "okay";
 };
+
+&quadspi {
+	status = "okay";
+};

@@ -1,0 +1,11 @@
+# Copyright (c) 2024 Realtek Semiconductor, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+config FLASH_RTS5817_QSPI
+	bool "RTS5817 flash driver"
+	depends on DT_HAS_REALTEK_RTS5817_QSPI_ENABLED
+	default y
+	select FLASH_HAS_PAGE_LAYOUT
+	select FLASH_HAS_EXPLICIT_ERASE
+	help
+	  Enable RTS5817 Flash driver.
