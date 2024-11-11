@@ -10,6 +10,7 @@ rsource "pinctrl/Kconfig"
 rsource "regulator/Kconfig"
 rsource "reset/Kconfig"
 rsource "spi/Kconfig"
+rsource "usb/Kconfig"
 rsource "watchdog/Kconfig"
 
 endmenu
