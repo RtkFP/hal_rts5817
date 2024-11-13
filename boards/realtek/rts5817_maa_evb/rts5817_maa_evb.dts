@@ -75,3 +75,7 @@
 zephyr_udc0: &usb {
 	status = "okay";
 };
+
+&trng {
+	status = "okay";
+};

@@ -15,6 +15,7 @@
 / {
 	chosen {
 		zephyr,sram = &sram0;
+		zephyr,entropy = &trng;
 	};
 
 	cpus {
@@ -212,6 +213,13 @@
 			num-endpoints = <9>;
 			status = "disabled";
 		};
+
+		trng: trng@401b0600 {
+			compatible = "realtek,rts5817-trng";
+			reg = <0x401b0600 0x80>;
+			status = "disabled";
+		};
+
 	};
 };
 
