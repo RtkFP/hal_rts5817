@@ -1,0 +1,9 @@
+# Copyright (c) 2024 Realtek Semiconductor, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_RTS5817_MAA_EVB
+
+config BOARD
+	default "rts5817_maa_evb"
+
+endif
