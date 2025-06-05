@@ -9,6 +9,7 @@ rsource "gpio/Kconfig"
 rsource "pinctrl/Kconfig"
 rsource "regulator/Kconfig"
 rsource "reset/Kconfig"
+rsource "spi/Kconfig"
 rsource "watchdog/Kconfig"
 
 endmenu

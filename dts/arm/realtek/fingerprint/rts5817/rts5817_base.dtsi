@@ -143,6 +143,34 @@
 			status = "disabled";
 		};
 
+		spi0: spi@40002000 {
+			compatible = "realtek,rts5817-spi";
+			reg = <0x40002000 0x100>,
+			      <0x40003000 0x100>;
+			reg-names = "ctrl", "dw";
+			clocks = <&clks RTS_FP_CLK_SPI_SSOR>;
+			interrupt-parent = <&nvic>;
+			interrupts = <IRQ_NUM_SENSOR_SPI 0>;
+			interrupt-enable;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
+		spi1: spi@40004000 {
+			compatible = "realtek,rts5817-spi";
+			reg = <0x40004000 0x100>,
+			      <0x40004200 0x100>;
+			reg-names = "ctrl", "dw";
+			clocks = <&clks RTS_FP_CLK_SPI_SSI_M>;
+			interrupt-parent = <&nvic>;
+			interrupts = <IRQ_NUM_SPI_MASTER 0>;
+			interrupt-enable;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
 		regulator: regulator@401e1000 {
 			compatible = "realtek,rts5817-regulator";
 			reg = <0x401e1000 0x30>, <0x401b0000 0x300>;
