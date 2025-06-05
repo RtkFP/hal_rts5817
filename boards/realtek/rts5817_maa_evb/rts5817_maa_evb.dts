@@ -49,3 +49,13 @@
 &quadspi {
 	status = "okay";
 };
+
+&regulator {
+	status = "okay";
+	svio {
+		regulator-always-on;
+	};
+	sva {
+		regulator-always-on;
+	};
+};

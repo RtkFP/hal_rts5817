@@ -22,3 +22,6 @@ CONFIG_WDT_DISABLE_AT_BOOT=y
 
 # enable flash
 CONFIG_FLASH=y
+
+# enable regulator
+CONFIG_REGULATOR=y
